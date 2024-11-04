@@ -16,9 +16,9 @@ def format_input(input_str: str, map_dict: Dict[str, str]):
     """
     # "home/usr/lib/%EXAMPLE%"
     start, idx = 0, 0
-    result = []     # ["home/usr/lib/", "EXAMPLE"]
+    result = []  # ["home/usr/lib/", "EXAMPLE"]
     while idx < len(input_str):
-        if input_str[idx] == '%':
+        if input_str[idx] == "%":
             result.append(input_str[start:idx])
 
             # skip the starting %
@@ -26,7 +26,7 @@ def format_input(input_str: str, map_dict: Dict[str, str]):
             start = idx
 
             # look for the end of tag
-            while idx < len(input_str) and input_str[idx] != '%':
+            while idx < len(input_str) and input_str[idx] != "%":
                 idx += 1
 
             tag = input_str[start:idx]
@@ -46,3 +46,9 @@ def format_input(input_str: str, map_dict: Dict[str, str]):
     result.append(input_str[start:])
 
     return "".join(result)
+
+
+def format_input_built_in(input_str: str, map_dict: Dict[str, str]):
+    for key, value in map_dict.items():
+        input_str = input_str.replace(f"%{key}%", value)
+    return input_str

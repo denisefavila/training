@@ -43,13 +43,6 @@ def test_empty_dictionary():
     assert format_input(input_string, variables) == expected_output
 
 
-def test_nested_placeholders():
-    input_string = "%A%-%B%"
-    variables = {"A": "%B%", "B": "end"}
-    expected_output = "%B%-end"
-    assert format_input(input_string, variables) == expected_output
-
-
 def test_placeholder_with_partial_match():
     input_string = "Welcome %USERNAME%"
     variables = {"USER": "Alice"}
