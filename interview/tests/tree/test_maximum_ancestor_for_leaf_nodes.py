@@ -1,5 +1,5 @@
 from interview.interview.general.tree_node import TreeNode
-from interview.interview.maximum_ancestor_for_leaf_nodes import (
+from interview.interview.tree.maximum_ancestor_for_leaf_nodes import (
     max_ancestor_for_leaf_nodes,
 )
 
