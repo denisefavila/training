@@ -1,6 +1,4 @@
-import pytest
-
-from interview.interview.employee_management import EmployeeManagement
+from interview.hash.employee_management import EmployeeManagement
 
 
 def test_set_manager():

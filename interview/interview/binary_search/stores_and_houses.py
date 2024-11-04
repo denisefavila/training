@@ -1,3 +1,4 @@
+import bisect
 from typing import List
 
 
@@ -7,30 +8,49 @@ def find_closest(value: int, nums: List[int]):
 
     """
     # find first greater or equal than
-
     left, right = 0, len(nums) - 1
 
     while left <= right:
         mid = (left + right) // 2
-        current_store = nums[mid]
-        if current_store == value:
-            return current_store
-
-        elif current_store > value:
+        if nums[mid] < value:
+            left = mid + 1
+        else:
             right = mid - 1
 
-        else:
-            left = mid + 1
-
-    if right < 0:
+    if left == 0:
         return nums[0]
-    elif left >= len(nums):
+    if left == len(nums):
         return nums[-1]
+
+    left_store = nums[left - 1]
+    right_store = nums[left]
+
+    if abs(left_store - value) <= abs(right_store - value):
+        return left_store
     else:
-        if abs(nums[left] - value) < abs(nums[right] - value):
-            return nums[left]
-        else:
-            return nums[right]
+        return right_store
+
+
+def find_closest_builtin(value: int, nums: List[int]):
+    """
+    [1,2,5] ->
+
+    """
+    # find first greater or equal than
+    pos = bisect.bisect_left(nums, value)
+
+    if pos == 0:
+        return nums[0]
+    if pos == len(nums):
+        return nums[-1]
+
+    left_store = nums[pos - 1]
+    right_store = nums[pos]
+
+    if abs(left_store - value) <= abs(right_store - value):
+        return left_store
+    else:
+        return right_store
 
 
 def get_closest_stores(houses: List[int], stores: List[int]):
