@@ -11,6 +11,7 @@ class EmployeeManagement:
 
     Function could be called with any ordering.
     """
+
     def __init__(self):
         self.manager_to_employees = {}  # {A: {B,C}, B: {D}}
         self.employee_to_manager = {}  # {B: A, C: A, D: B}
