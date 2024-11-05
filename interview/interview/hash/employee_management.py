@@ -1,4 +1,16 @@
 class EmployeeManagement:
+    """
+
+    Design a data structure to support following functions:
+
+    setManager(A, B) sets A as a direct manager of B
+    setPeer(A, B) sets A as a colleague of B.
+        After that,  A and B will have the same direct Manager.
+    query(A, B) returns if A is in the management chain of B.
+        Every person only has 1 direct manager.
+
+    Function could be called with any ordering.
+    """
     def __init__(self):
         self.manager_to_employees = {}  # {A: {B,C}, B: {D}}
         self.employee_to_manager = {}  # {B: A, C: A, D: B}
