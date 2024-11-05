@@ -1,3 +1,4 @@
+from bisect import bisect_left
 from functools import lru_cache
 from typing import List
 
