@@ -1,10 +1,9 @@
 def assign_questions_to_volunteers(questions, volunteers):
     def have_common_elements(set1, set2):
-        """Helper function to check if two sets have common elements."""
         return not set1.isdisjoint(set2)
 
     def explore(question_idx, seen, matched_volunteers):
-        """DFS helper function to find augmenting paths for maximum bipartite matching."""
+        """augmenting paths for maximum bipartite matching"""
         for volunteer_idx in range(num_volunteers):
             if (
                 can_assign_matrix[question_idx][volunteer_idx]
@@ -16,7 +15,7 @@ def assign_questions_to_volunteers(questions, volunteers):
                     matched_volunteers[volunteer_idx], seen, matched_volunteers
                 ):
                     matched_volunteers[volunteer_idx] = (
-                        question_idx  # Assign question to volunteer
+                        question_idx
                     )
                     return True
         return False
