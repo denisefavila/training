@@ -1,8 +1,5 @@
-from interview.interview.assign_apartments_to_people import (
-    Apartment,
-    Person,
-    assign_apartments_to_people,
-)
+from interview.graph.assign_apartments_to_people import (
+    Apartment, Person, assign_apartments_to_people)
 
 
 def test_assign_apartments_to_people():

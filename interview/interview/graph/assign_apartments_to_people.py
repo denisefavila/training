@@ -1,6 +1,6 @@
+import heapq
 from collections import defaultdict
 from typing import Collection, Dict, List
-import heapq
 
 
 class Apartment:

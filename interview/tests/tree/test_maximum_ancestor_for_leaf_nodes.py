@@ -1,7 +1,6 @@
 from interview.interview.general.tree_node import TreeNode
-from interview.interview.tree.maximum_ancestor_for_leaf_nodes import (
-    max_ancestor_for_leaf_nodes,
-)
+from interview.interview.tree.maximum_ancestor_for_leaf_nodes import \
+    max_ancestor_for_leaf_nodes
 
 
 def test_single_node_tree():

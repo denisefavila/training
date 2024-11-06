@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 
 def get_max_distance_binary_strings(binary_strings: List[str]):

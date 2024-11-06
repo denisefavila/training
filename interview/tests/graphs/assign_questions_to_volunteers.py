@@ -1,8 +1,5 @@
-import pytest
-
-from interview.interview.assign_questions_to_volunteers import (
-    assign_questions_to_volunteers,
-)
+from interview.graph.assign_questions_to_volunteers import \
+    assign_questions_to_volunteers
 
 
 def test_assign_questions_to_volunteers_basic_case():

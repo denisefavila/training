@@ -1,5 +1,5 @@
-from typing import List
 import heapq
+from typing import List
 
 from interview.interview.general.euclidian_distance import euclidean_distance
 

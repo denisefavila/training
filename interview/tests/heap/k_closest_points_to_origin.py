@@ -1,6 +1,5 @@
-from interview.interview.heap.k_closest_points_to_origin import (
-    get_k_closest_points_to_origin,
-)
+from interview.interview.heap.k_closest_points_to_origin import \
+    get_k_closest_points_to_origin
 
 
 def test_k_closest():
