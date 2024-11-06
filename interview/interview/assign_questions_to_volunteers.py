@@ -1,6 +1,63 @@
+def have_common_elements(set1, set2):
+    return not set1.isdisjoint(set2)
+
+
 def assign_questions_to_volunteers(questions, volunteers):
-    def have_common_elements(set1, set2):
-        return not set1.isdisjoint(set2)
+    def backtrack(question_idx, assignments, assigned_volunteers):
+        if question_idx == len(questions):
+            return True
+
+        question = questions[question_idx]
+        assigned_any = False
+
+        for volunteer_idx, volunteer in enumerate(volunteers):
+            if volunteer_idx not in assigned_volunteers and have_common_elements(
+                set(question["tags"]), set(volunteer["tags"])
+            ):
+                assignments[question["id"]] = volunteer["id"]
+                assigned_volunteers.add(volunteer_idx)
+
+                if backtrack(question_idx + 1, assignments, assigned_volunteers):
+                    assigned_any = True
+                    break
+
+                del assignments[question["id"]]
+                assigned_volunteers.remove(volunteer_idx)
+
+        return assigned_any or backtrack(
+            question_idx + 1, assignments, assigned_volunteers
+        )
+
+    assignments = {}
+    assigned_volunteers = set()
+
+    backtrack(0, assignments, assigned_volunteers)
+
+    return assignments
+
+
+def assign_questions_to_volunteers_dfs(questions, volunteers):
+    """
+
+    questions[
+    {id:1, tags: ["MAC", "VSCODE"]},
+    {id:2, tags: ["PY", "AI"]}
+    {id:3, tags: ["JAVA", "OS"]}
+    {id:4, tags: ["PY", "NW"]}
+    ]
+
+    Volunteer[
+    {id: "1", tags:["PY",""NW], name: "A"},
+    {id: "2", tags:["AI"], name: "B"},
+    {id: "3", tags:["JAVA","NW], name: "C"},
+    {id: "4", tags:["JAVA","NW"], name: "D"}
+    ]
+
+    Assign question to volunteers such that each question is assigned to at most one
+    volunteer based on tags match.
+    One volunteer can take at most one question and maximise the question assigned to volunteer.
+
+    """
 
     def explore(question_idx, seen, matched_volunteers):
         """augmenting paths for maximum bipartite matching"""
@@ -14,9 +71,7 @@ def assign_questions_to_volunteers(questions, volunteers):
                 if matched_volunteers[volunteer_idx] == -1 or explore(
                     matched_volunteers[volunteer_idx], seen, matched_volunteers
                 ):
-                    matched_volunteers[volunteer_idx] = (
-                        question_idx
-                    )
+                    matched_volunteers[volunteer_idx] = question_idx
                     return True
         return False
 
