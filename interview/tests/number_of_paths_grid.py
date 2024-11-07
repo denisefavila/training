@@ -11,6 +11,10 @@ def test_unique_paths_with_obstacles():
     # Test case where the grid is 1x1 with an obstacle
     assert unique_paths_with_obstacles([[1]]) == 0
 
+    # Test a 2x2 grid with no obstacles
+    grid = [[0, 0], [0, 0]]
+    assert unique_paths_with_obstacles(grid) == 2  # There are 2 paths
+
     # Test a 3x3 grid with no obstacles
     grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     assert unique_paths_with_obstacles(grid) == 6  # There are 6 paths
