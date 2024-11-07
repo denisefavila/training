@@ -1,4 +1,4 @@
-from interview.interview.number_of_paths_grid import (
+from interview.dp.number_of_paths_grid import (
     unique_paths,
     unique_paths_with_obstacles,
 )
