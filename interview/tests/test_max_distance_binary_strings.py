@@ -1,5 +1,6 @@
-from interview.interview.max_distance_binary_strings import \
-    get_max_distance_binary_strings
+from interview.interview.max_distance_binary_strings import (
+    get_max_distance_binary_strings,
+)
 
 
 def test_max_distance():

@@ -57,8 +57,6 @@ def walls_and_gates2(rooms: List[List[int]]) -> None:
     Fill each empty room with the distance to its nearest gate.
     If it is impossible to reach a gate, it should be filled with INF.
 
-
-
     """
 
     def get_next_positions(i, j):

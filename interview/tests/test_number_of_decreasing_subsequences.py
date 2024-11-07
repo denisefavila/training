@@ -1,7 +1,8 @@
 import pytest
 
-from interview.interview.number_of_decreasing_subsequences import \
-    get_number_of_decreasing_subsequences
+from interview.interview.number_of_decreasing_subsequences import (
+    get_number_of_decreasing_subsequences,
+)
 
 
 @pytest.mark.parametrize(

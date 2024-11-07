@@ -1,5 +1,4 @@
-from interview.interview.binary_search.stores_and_houses import \
-    get_closest_stores
+from interview.interview.binary_search.stores_and_houses import get_closest_stores
 
 
 def test_single_house_and_store():

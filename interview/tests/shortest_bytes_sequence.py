@@ -1,5 +1,6 @@
-from interview.interview.shortest_bytes_sequence import \
-    find_shortest_missing_byte_sequence
+from interview.interview.shortest_bytes_sequence import (
+    find_shortest_missing_byte_sequence,
+)
 
 
 def test_find_shortest_missing_byte_sequence():
