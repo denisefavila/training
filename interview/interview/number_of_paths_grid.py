@@ -31,14 +31,13 @@ def unique_paths_with_obstacles(grid: List[List[int]]):
         if i == m - 1 and j == n - 1:
             return 1
 
-
-
-        explore_right=num_unique_paths(i, j + 1)
-        explore_down=num_unique_paths(i + 1, j)
+        explore_right = num_unique_paths(i, j + 1)
+        explore_down = num_unique_paths(i + 1, j)
 
         return explore_right + explore_down
 
     return num_unique_paths(0, 0)
+
 
 def unique_paths(m, n):
     """
