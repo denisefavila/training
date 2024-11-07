@@ -1,4 +1,4 @@
-from interview.graph.assign_apartments_to_people import (
+from interview.interview.graph.assign_apartments_to_people import (
     Apartment,
     Person,
     assign_apartments_to_people,

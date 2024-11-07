@@ -1,4 +1,4 @@
-from interview.strings_and_arrays.format_input_string import format_input
+from interview.interview.strings_and_arrays.format_input_string import format_input
 
 
 def test_single_placeholder():
