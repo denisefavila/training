@@ -1,4 +1,4 @@
-from interview.interview.partition_equal_subset_sum import can_partition
+from interview.dp.partition_equal_subset_sum import can_partition
 
 
 def test_partition_possible():
