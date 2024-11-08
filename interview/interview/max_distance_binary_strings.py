@@ -59,7 +59,7 @@ def get_max_distance_binary_strings(binary_strings: List[str]):
     trie = build_trie(binary_strings)
 
     heights = calculate_heights(trie)
-  
+
     same_prefix = trie
     while len(same_prefix) == 1:
         same_prefix = list(same_prefix.values())[0]

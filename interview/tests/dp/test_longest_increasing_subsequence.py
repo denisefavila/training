@@ -1,6 +1,8 @@
 import pytest
 
-from interview.interview.dp.longest_increasing_subsequence import longest_increasing_subsequence
+from interview.interview.dp.longest_increasing_subsequence import (
+    longest_increasing_subsequence,
+)
 
 
 @pytest.mark.parametrize(
