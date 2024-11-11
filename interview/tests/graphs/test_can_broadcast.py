@@ -1,9 +1,4 @@
-import pytest
-
 from interview.interview.graph.can_broadcast import broadcast_message
-
-
-# Assuming broadcast_message function is defined elsewhere
 
 
 def test_broadcast_message():
