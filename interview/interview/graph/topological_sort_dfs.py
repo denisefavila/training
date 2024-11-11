@@ -15,6 +15,7 @@ def topological_sort(graph):
 
     def visit(n):
         nonlocal has_cycle
+
         if n in perm_mark:
             return
         if n in temp_mark:
