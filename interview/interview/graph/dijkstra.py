@@ -4,12 +4,6 @@ from heapq import heappop, heappush
 def dijkstra(graph, start):
     """
     Finds the shortest path from a starting node to all other nodes in a weighted graph.
-
-    :param graph: A dictionary where keys are node names and values are dictionaries
-                  of neighboring nodes with edge weights.
-                  Example: {'A': {'B': 1, 'C': 4}, 'B': {'C': 2, 'D': 5}, ...}
-    :param start: The starting node.
-    :return: A dictionary where keys are nodes and values are the shortest path distance from start.
     """
     distances = {node: float("inf") for node in graph}
     distances[start] = 0
