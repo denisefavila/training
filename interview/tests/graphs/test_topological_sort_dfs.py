@@ -1,10 +1,10 @@
-from interview.interview.graph.topological_sort_kahn import topological_sort
+from interview.interview.graph.topological_sort_dfs import topological_sort
 
 
 def test_topological_sort():
     # Test 1: Normal case with no cycles
     graph_1 = {"A": ["B", "C"], "B": ["D"], "C": [], "D": ["E"], "E": []}
-    assert topological_sort(graph_1) == ["A", "B", "C", "D", "E"]
+    assert topological_sort(graph_1) == ["A", "C", "B", "D", "E"]
 
     # Test 2: Single node, no dependencies
     graph_2 = {"A": []}
@@ -12,7 +12,7 @@ def test_topological_sort():
 
     # Test 3: Multiple nodes with no edges
     graph_3 = {"A": [], "B": [], "C": []}
-    assert topological_sort(graph_3) == ["A", "B", "C"]  # Order doesn't matter here
+    assert topological_sort(graph_3) == ["C", "B", "A"]  # Order doesn't matter here
 
     # Test 4: Cyclic graph (should return cycle detected)
     graph_4 = {"A": ["B"], "B": ["C"], "C": ["A"]}
