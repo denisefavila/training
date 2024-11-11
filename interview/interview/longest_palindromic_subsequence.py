@@ -19,4 +19,4 @@ def longest_palindromic_subsequence(word: str):
 
         return max(add_current, dont_add_current)
 
-    return longest_size(0, 0, len(word)-1)
+    return longest_size(0, 0, len(word) - 1)
