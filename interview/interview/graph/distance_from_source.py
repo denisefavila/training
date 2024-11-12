@@ -1,7 +1,7 @@
 from collections import deque
 
 
-def distance_from_source(graph, source):
+def min_distance_from_source(graph, source):
     """
     # non directed graph
 
