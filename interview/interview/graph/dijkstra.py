@@ -9,15 +9,9 @@ def dijkstra(graph, start):
     distances[start] = 0
 
     queue = [(0, start)]
-    finished = set()  # Track nodes for which we finalized the shortest path
 
     while queue:
         current_distance, current_node = heappop(queue)
-
-        if current_node in finished:
-            continue
-
-        finished.add(current_node)
 
         if current_distance > distances[current_node]:
             continue

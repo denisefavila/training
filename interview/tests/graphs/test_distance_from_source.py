@@ -121,9 +121,7 @@ def test_bfs_grid():
         "g": 3,
         "h": 4,
     }
-    import pdb
 
-    pdb.set_trace()
     assert predecessors == {
         "s": None,
         "a": "s",
