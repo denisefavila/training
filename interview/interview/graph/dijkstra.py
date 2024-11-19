@@ -13,9 +13,6 @@ def dijkstra(graph, start):
     while queue:
         current_distance, current_node = heappop(queue)
 
-        if current_distance > distances[current_node]:
-            continue
-
         for next_node, weight in graph[current_node].items():
             next_distance = current_distance + weight
             if next_distance < distances[next_node]:
